@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1c1d1c;
+  color: #ff503f;
+  font-family: "Segoe UI", sans-serif;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameboard {
+  width: 30rem;
+  height: 30rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.gameboard__cell {
+  border-right: 0.5rem solid #fafaf9;
+  border-bottom: 0.5rem solid #fafaf9;
+  font-size: 5rem;
+  cursor: pointer;
+  user-select: none;
+
+  display: grid;
+  place-items: center;
+}
+
+.gameboard__cell:nth-child(3n) {
+  border-right: none;
+}
+
+.gameboard__cell:nth-child(n + 7) {
+  border-bottom: none;
+}
+
+.gameboard__cell.highlight {
+  background-color: #004600;
+}
